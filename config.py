@@ -106,7 +106,7 @@ class config:
         'long': 0.1
     }
     # Batch_size
-    BATCH_SIZE = 6
+    BATCH_SIZE = 2
 
     # Learning Rate
     LEARNING_RATE = 1e-3
@@ -118,7 +118,7 @@ class config:
     NUM_GPUS = 1
 
     # The total batch size will be (NUM_GPUS * BATCH_SIZE_PER_GPU)
-    BATCH_SIZE_PER_GPU = 6
+    BATCH_SIZE_PER_GPU = 2
 
     # Whether to use Polyak weight averaging as mentioned in the paper
     POLYAK = False
