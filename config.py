@@ -139,14 +139,14 @@ class config:
     NUM_EPOCHS_SIZE = 10000
     
     # Where to save the coco2017 dataset
-    ANNO_FILE = 'E:/dataset/coco2017/annotations/person_keypoints_val2017.json'
-    IMG_DIR = 'E:/dataset/coco2017/val2017'
+    ANNO_FILE = '/content/coco/annotations/person_keypoints_val2017.json'
+    IMG_DIR = '/content/coco/val2017'
     
     #ANNO_FILE = '/home/data/hzj/annotations/person_keypoints_train2017.json'
     #IMG_DIR = '/home/data/hzj/train2017'
     
     # log dir
-    LOG_DIR = './log'
+    LOG_DIR = '/content/log'
 
 class TransformationParams:
 
