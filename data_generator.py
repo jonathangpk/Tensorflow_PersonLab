@@ -93,7 +93,7 @@ class DataGeneraotr(object):
         
         # get ground truth from keypoints
         kp = [np.squeeze(k) for k in np.split(kp, kp.shape[0], axis=0)]
-        print(kp)
+        # print(kp)
         kp_maps, short_offsets, mid_offsets, long_offsets = get_ground_truth(instance_masks, kp)
         # print(img.shape,kp_maps.shape,short_offsets.shape,mid_offsets.shape,long_offsets.shape)
         # shape: img(401,401,3) kp_maps(401,401,17) short(401,401,34) medium(401,401,64) long(401,401,34) 

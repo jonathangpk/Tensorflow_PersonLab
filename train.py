@@ -4,6 +4,8 @@ import model
 import numpy as np
 from data_generator import DataGeneraotr
 import os 
+import time
+
 slim = tf.contrib.slim
 
 # edit it depended on your GPU environment
@@ -157,11 +159,15 @@ def train(load_pretrained_model=True,checkpoint_path=None):
     writer = tf.summary.FileWriter(config.LOG_DIR)
     for n in range(config.NUM_EPOCHS):
         for m in range(config.NUM_EPOCHS_SIZE):
+            t1 = time.time()
             batch = next(dataset.gen_batch(batch_size=batch_size))
+            print('data time %s' % (time.time() - t1))
             print("[*]\tOne Batch Generated!")
             feed_dict = {img:batch[0],kp_maps_true:batch[1],short_offsets_true:batch[2],mid_offsets_true:batch[3],long_offsets_true:batch[4],
                          seg_mask_true:batch[5],crowd_mask:batch[6],unannotated_mask:batch[7],overlap_mask:batch[8]}
-            _,train_loss = sess.run([train_step,loss],feed_dict=feed_dict)
+            t2 = time.time()
+            _, train_loss = sess.run([train_step, loss],feed_dict=feed_dict)
+            print('train time %s' % (time.time() - t2))
             iters = n*config.NUM_EPOCHS_SIZE+m
             
             # record and output the loss 
