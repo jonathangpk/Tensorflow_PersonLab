@@ -106,10 +106,10 @@ class config:
         'long': 0.1
     }
     # Batch_size
-    BATCH_SIZE = 1
+    BATCH_SIZE = 6
 
     # Learning Rate
-    LEARNING_RATE = 4e-5
+    LEARNING_RATE = 1e-3
 
     # Whether to keep the batchnorm weights frozen.
     BATCH_NORM_FROZEN = True
@@ -118,7 +118,7 @@ class config:
     NUM_GPUS = 1
 
     # The total batch size will be (NUM_GPUS * BATCH_SIZE_PER_GPU)
-    BATCH_SIZE_PER_GPU = 1
+    BATCH_SIZE_PER_GPU = 6
 
     # Whether to use Polyak weight averaging as mentioned in the paper
     POLYAK = False
